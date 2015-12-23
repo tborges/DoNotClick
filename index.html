@@ -1,10 +1,114 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+	<meta charset="ISO-8859-1">
+	<title>Assure Locate - GPS Fleet Tracking & Teen Tracker</title>
+
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+
+
+
+<style>
+/* --------- EASY INSTALLATION --------- */
+.easy-installation-below-title {padding-top: 20px;}
+
+div.ui-widget-header.ui-droppable p {color: transparent;}
+
+#draggable2 {
+	background-image: url(http://www.assurelocate.com/wp-content/uploads/GPS-device1.png) !important;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	width: 200px;
+	height: 267px;
+	border: 0;
+	padding: .5em;
+	float: left;
+	margin-left: -150px;
+}
+
+#droppable {
+	background-image: url(http://www.assurelocate.com/wp-content/uploads/obd-base3.png) !important;
+	background-repeat: no-repeat;
+	width: 150px;
+	height: 150px;
+	background-color: transparent;
+	border: 0;
+	padding-right: 1px !important;
+	float: right;
+}
+
+/* --------- Car Dashboard --------- */
+.car-dashboard {position: relative;top: 0;left: 0;}
+
+/* --------- ARROW BW --------- */
+.arrow-bw {position: absolute;padding-top: 0;padding-right: 20px;}
+div.ui-widget-header.ui-droppable p {padding-left: 35px;margin-top: -20px;}
+
+/* --------- BLINKER --------- */
+h3 center {padding-top: 150px;color: red;animation: blinker 1s linear infinite;}
+.drag-me-blinker {padding-top: 150px;color: red;animation: blinker 1s linear infinite;}
+@keyframes blinker {50% {opacity: 0;}}
+
+
+/* --- TURN OFF FOR MOBILE - EASY INSTALLATION --- */
+@media screen and (min-width: 269px) and (max-width: 1000px) {.easy-installation {display: none;}}
+
+</style>
+
+
+<script>
+  $(function() {
+    $( "#draggable" ).draggable({ revert: "valid" });
+    $( "#draggable2" ).draggable({ revert: "invalid" });
+ 
+    $( "#droppable" ).droppable({
+      activeClass: "ui-state-default",
+      hoverClass: "ui-state-hover",
+      drop: function( event, ui ) {
+        $( this )
+          .addClass( "ui-state-highlight" )
+          .find( "p" )
+            .html( "<h3><center>GPS connected!</center></h3>" );
+      }
+    });
+  });
+  </script>
 </head>
+
 <body>
-tttttttt
+
+
+<!-- EASY INSTALLATION -->
+<div class="easy-installation">
+<h1 class="about_header" style="text-align: center"><span style="color: #333333">EASY INSTALLATION</span></h1>
+<div class="row easy-installation-below-title">
+
+<!-- GPS DEVISE  -->
+<div class="col-md-6">
+      <div id="draggable2" class="ui-widget-content">
+      <strong style="color:red" class="drag-me-blinker">DRAG ME</strong>
+</div>
+</br>
+<div id="droppable" class="ui-widget-header"><p>.</p></div>
+
+</div><!-- CLOSE GPS DEVICE -->
+
+
+
+<!-- CAR DASHBOARD  -->
+<div class="col-md-6" style="padding-bottom:150px">
+
+<div>
+  <div class="car-dashboard"><img src="http://www.assurelocate.com/wp-content/uploads/car-dashboard1.jpg" width="100%" height="100%" /></div>
+</div>
+
+</div><!-- CLOSE CAR DASHBOARD -->
+</div> <!-- CLOSE ROW -->
+</div> <!-- CLOSE EASY INSTALLATION -->
+
 </body>
 </html>
